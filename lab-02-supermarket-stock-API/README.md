@@ -1,5 +1,11 @@
-# 🛒 Supermarket Stock API 
-DevOps Lab (REST API + Swagger UI)
+<div align="center">
+<img src="https://github.com/user-attachments/assets/2f6e9ba5-2baf-475f-8e33-357c4f67245a" width="220" alt="AWS Logo"/>
+
+# Supermarket Stock API 
+
+**DevOps Lab**
+
+</div>
 
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
@@ -9,9 +15,69 @@ DevOps Lab (REST API + Swagger UI)
 
 Projeto prático desenvolvido para consolidar conceitos fundamentais e intermediários de **Docker**, **sistemas de arquivos**, **persistência de dados (Volumes e Bind Mounts)**, **documentação OpenAPI/Swagger** e **troubleshooting de ecossistemas conteinerizados** no cenário de varejo/supermercados.
 
+## 🛒 Objetivo do projeto
+
+Criaremos uma API simples em Python (Flask) para cadastro de produtos de supermercado. 
+Ela salvará logs de acessos em um **Bind Mount** e o inventário de produtos em um **Docker Volume**.
+
+Ao destruir o primeiro container (`stock_app`) e subir uma nova instância (`stock_app_v2`) reconectada ao mesmo volume
+e  bind mount, mostaremos a regra central de infraestrutura conteinerizada:
+
+<div align="center">
+<img src="https://github.com/user-attachments/assets/d4e683e9-e4d5-4d72-92c7-8a18ebeb484b" width="800" alt="AWS Logo"/>
+</div>
+
+---
+## 🛒 Infográfico
+
+No infográfico, a gente  consegue visualizar exatamente a divisão que criaremos: 
+como as portas conectam o navegador à API, a diferença do Bind Mount (que joga o log direto para a sua pasta no Ubuntu)
+e do Docker Volume (que segura o banco de dados/estoque de forma persistente e segura).
+
+<div align="center">
+<img src="https://github.com/user-attachments/assets/1ad34c39-e5b7-49f3-b217-0cc8bb6421c4" width="800" alt="AWS Logo"/>
+</div>
+
 ---
 
-## 📌 Objetivos do Projeto
+## 🛒 Como a arquitetura do projeto foi estruturada?
+
+1. Imagem e Containerização (`supermarket-api:v1`):
+
+- Criada a partir de um Dockerfile otimizado.
+
+- Executada com um usuário não-root por boas práticas de segurança (novo_user).
+
+- Roda em um container isolado (`stock_app` / `stock_app_v2`).
+
+
+2. Serviço RESTful + Swagger UI:
+
+- Expõe as rotas `/health` (status da API) e `/products` (listagem e cadastro de produtos em JSON).
+
+- Porta do container (5000) mapeada para a porta do host Ubuntu (8080), permitindo acessar a documentação interativa pelo navegador em `http://localhost:8080/apidocs/`.
+
+
+3.Estratégia de Persistência de Dados
+
+**01. Docker Volume (`supermarket_stock_data`):**
+
+- Mapeamento: `/app/data/` interno do container.
+
+- Arquivo: `inventory.json`.
+
+- Finalidade: Armazenar os dados de produtos e estoque em um local isolado, de alta performance e totalmente protegido contra falhas ou recriações do container.
+
+**02. Bind Mount ($(pwd)/logs):**
+
+- Mapeamento: `~/supermarket-lab/logs/ (Ubuntu Host) ➔ /app/logs/ (Container)`.
+
+- Arquivo: `access.log`.
+
+- Finalidade: Gravar em tempo real os logs de acesso e auditoria da API diretamente no sistema de arquivos da máquina física (Ubuntu),
+permitindo consulta imediata sem precisar acessar o container.
+
+## 🛒 Objetivos técnicos do Projeto
 
 - [x] **API RESTful com Documentação Swagger (OpenAPI):** Endpoints modernos com UI interativa em `/apidocs/`.
 - [x] **Construção de Imagens Seguras:** `Dockerfile` executando com usuário não-root (`totvs_user`) e otimização de cache.
