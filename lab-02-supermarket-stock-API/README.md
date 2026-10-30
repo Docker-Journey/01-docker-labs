@@ -77,6 +77,16 @@ e do Docker Volume (que segura o banco de dados/estoque de forma persistente e s
 - Finalidade: Gravar em tempo real os logs de acesso e auditoria da API diretamente no sistema de arquivos da máquina física (Ubuntu),
 permitindo consulta imediata sem precisar acessar o container.
 
+Esta imagem visualiza como a Imagem Docker (`supermarket-api:v1`) gera os nossos dois containers, mostrando que,
+mesmo com a destruição do `stock_app` via terminal, o banco de dados (inventory.json e os logs de acessos) 
+continuou intacto e conectado ao `stock_app_v2` devido ao volume e ao bind mount.
+
+<div align="center">
+<img src="https://github.com/user-attachments/assets/6e3a1c94-b318-43b1-9743-ee21fad8384a" width="500" alt="AWS Logo"/>
+</div>
+
+---
+
 ## 🛒 Objetivos técnicos do Projeto
 
 - [x] **API RESTful com Documentação Swagger (OpenAPI):** Endpoints modernos com UI interativa em `/apidocs/`.
