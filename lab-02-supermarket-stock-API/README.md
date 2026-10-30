@@ -91,7 +91,7 @@ e do Docker Volume (que segura o banco de dados/estoque de forma persistente e s
 - Finalidade: Gravar em tempo real os logs de acesso e auditoria da API diretamente no sistema de arquivos da máquina física (Ubuntu),
 permitindo consulta imediata sem precisar acessar o container.
 
-**Sintaxe do bind mount: anexando o volume ao container**
+**Sintaxe do bind mount: compartilhando arquivos do host com o container**
 
 <div align="center">
 <img src="https://github.com/user-attachments/assets/ca06b364-b8ed-4ae4-a816-47087b5e82f2" width="500" alt="BindMount"/>
