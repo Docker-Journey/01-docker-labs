@@ -18,20 +18,36 @@ Projeto prático desenvolvido para consolidar conceitos fundamentais e intermedi
 ## 🛒 Objetivo do projeto
 
 Criaremos uma API simples em Python (Flask) para cadastro de produtos de supermercado. 
-Ela salvará logs de acessos em um **Bind Mount** e o inventário de produtos em um **Docker Volume**.
+Ela salvará:
+- logs de acessos em um **Bind Mount**
+- e o inventário de produtos em um **Docker Volume**.
 
 Ao destruir o primeiro container (`stock_app`) e subir uma nova instância (`stock_app_v2`) reconectada ao mesmo volume
-e  bind mount, mostaremos a regra central de infraestrutura conteinerizada:
+e  bind mount, mostraremos a regra central de infraestrutura conteinerizada:
 
 <div align="center">
-<img src="https://github.com/user-attachments/assets/d4e683e9-e4d5-4d72-92c7-8a18ebeb484b" width="800" alt="AWS Logo"/>
+<img src="https://github.com/user-attachments/assets/965d3c2e-a56a-4718-a5cb-7656cdc75006"  width="800" alt="AWS Logo"/>
 </div>
 
 ---
+
+## O que será criado
+
+- Criaremos a imagem `supermarket-api:v1`
+- Criaremos o container 1 `stock_app`
+- Criaremos um volume `supermarket-stock_data` 
+- Criaremos o Bind Mount: espelhando o diretorio do host (`~/supermarket-lab/log`) para o diretorio no container 1 (`/app/logs`)
+
+## Situação
+
+- Destruiremos o container 1 `stock_app`
+- Criaremos o container 2 `stock_app_v2`
+- Anexaremos o volume `supermarket-stock_data` ao novo container 2 `stock_app_v2`
+
 ## 🛒 Infográfico
 
 No infográfico, a gente  consegue visualizar exatamente a divisão que criaremos: 
-como as portas conectam o navegador à API, a diferença do Bind Mount (que joga o log direto para a sua pasta no Ubuntu)
+como as portas conectam o navegador à API e a diferença do Bind Mount (que joga o log direto para o diretorio no Ubuntu)
 e do Docker Volume (que segura o banco de dados/estoque de forma persistente e segura).
 
 <div align="center">
@@ -46,17 +62,15 @@ e do Docker Volume (que segura o banco de dados/estoque de forma persistente e s
 
 - Criada a partir de um Dockerfile otimizado.
 
-- Executada com um usuário não-root por boas práticas de segurança (novo_user).
+- Executada com um usuário não-root por boas práticas de segurança (`novo_user`).
 
 - Roda em um container isolado (`stock_app` / `stock_app_v2`).
-
 
 2. Serviço RESTful + Swagger UI:
 
 - Expõe as rotas `/health` (status da API) e `/products` (listagem e cadastro de produtos em JSON).
 
 - Porta do container (5000) mapeada para a porta do host Ubuntu (8080), permitindo acessar a documentação interativa pelo navegador em `http://localhost:8080/apidocs/`.
-
 
 3.Estratégia de Persistência de Dados
 
