@@ -58,7 +58,7 @@ e do Docker Volume (que segura o banco de dados/estoque de forma persistente e s
 
 ## 🛒 Como a arquitetura do projeto foi estruturada?
 
-1. Imagem e Containerização (`supermarket-api:v1`):
+**1. Imagem e Containerização (`supermarket-api:v1`):**
 
 - Criada a partir de um Dockerfile otimizado.
 
@@ -66,13 +66,13 @@ e do Docker Volume (que segura o banco de dados/estoque de forma persistente e s
 
 - Roda em um container isolado (`stock_app` / `stock_app_v2`).
 
-2. Serviço RESTful + Swagger UI:
+**2. Serviço RESTful + Swagger UI:**
 
 - Expõe as rotas `/health` (status da API) e `/products` (listagem e cadastro de produtos em JSON).
 
 - Porta do container (5000) mapeada para a porta do host Ubuntu (8080), permitindo acessar a documentação interativa pelo navegador em `http://localhost:8080/apidocs/`.
 
-3.Estratégia de Persistência de Dados
+**3. Estratégia de Persistência de Dados**
 
 **01. Docker Volume (`supermarket_stock_data`):**
 
@@ -91,7 +91,17 @@ e do Docker Volume (que segura o banco de dados/estoque de forma persistente e s
 - Finalidade: Gravar em tempo real os logs de acesso e auditoria da API diretamente no sistema de arquivos da máquina física (Ubuntu),
 permitindo consulta imediata sem precisar acessar o container.
 
-Esta imagem visualiza como a Imagem Docker (`supermarket-api:v1`) gera os nossos dois containers, mostrando que,
+**Sintaxe do bind mount: anexando o volume ao container**
+
+<div align="center">
+<img src="https://github.com/user-attachments/assets/ca06b364-b8ed-4ae4-a816-47087b5e82f2" width="500" alt="BindMount"/>
+</div>
+
+---
+
+## Ciclo de vida e persistência
+
+Esta imagem abaixo visualiza como a Imagem Docker (`supermarket-api:v1`) gera os nossos dois containers, mostrando que,
 mesmo com a destruição do `stock_app` via terminal, o banco de dados (inventory.json e os logs de acessos) 
 continuou intacto e conectado ao `stock_app_v2` devido ao volume e ao bind mount.
 
