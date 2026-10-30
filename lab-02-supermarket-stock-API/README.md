@@ -99,17 +99,31 @@ permitindo consulta imediata sem precisar acessar o container.
 
 ---
 
-## Ciclo de vida e persistência
+## 🛒 Ciclo de vida e persistência
 
 Esta imagem abaixo visualiza como a Imagem Docker (`supermarket-api:v1`) gera os nossos dois containers, mostrando que,
 mesmo com a destruição do `stock_app` via terminal, o banco de dados (inventory.json e os logs de acessos) 
 continuou intacto e conectado ao `stock_app_v2` devido ao volume e ao bind mount.
 
 <div align="center">
-<img src="https://github.com/user-attachments/assets/6e3a1c94-b318-43b1-9743-ee21fad8384a" width="500" alt="AWS Logo"/>
+<img src="https://github.com/user-attachments/assets/6e3a1c94-b318-43b1-9743-ee21fad8384a" width="500" alt="persitencia-dados"/>
 </div>
 
 ---
+
+## 🛒 Sintaxe: Anexar volume ao container 1 e 2
+
+A regra de ouro da sintaxe `-v` no Docker é sempre dividida pelos dois pontos (:):
+
+• Antes dos dois pontos (Esquerda): O que está na sua máquina física (Host). No nosso caso, o volume gerenciado `supermarket-stock_data`.
+
+• Depois dos dois pontos (Direita): Onde esse caminho vai aparecer dentro do ambiente isolado (Container). No nosso caso, a pasta `/app/data`.
+
+Essa mesma lógica vale tanto para os Docker Volumes quanto para os Bind Mounts (como a pasta de logs).
+
+<div align="center">
+<img src="https://github.com/user-attachments/assets/29824046-44df-4259-9189-d271316ab0e4" width="500" alt="sintaxe-volume"/>
+</div>
 
 ## 🛒 Objetivos técnicos do Projeto
 
