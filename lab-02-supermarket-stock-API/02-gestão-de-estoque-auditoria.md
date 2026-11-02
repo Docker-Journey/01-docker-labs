@@ -2,7 +2,7 @@
 
 # 🛒 API de Gestão de Estoque
 
-### Segurança dos dados, continuidade da operação e auditoria em tempo real
+### Segurança dos dados e auditoria 
 
 **Uma solução de gestão de estoque para supermercados utilizando Python e Docker.**
 
@@ -13,6 +13,8 @@
 </div>
 
 ---
+
+## Documento não técnico
 
 ## Sobre o projeto
 
@@ -29,7 +31,7 @@ Através de uma interface de testes da API, conseguimos realizar duas operaçõe
 
 <img src="https://github.com/user-attachments/assets/6dcf034b-3784-4be4-b8eb-a1ef8133c110" width="85%" alt="Ilustração da solução de gestão de estoque utilizando Docker"/>
 
-<sub>Figura 1 — Aplicação de gestão de estoque executando em um Container Docker.</sub>
+<sub>Figura 1 - Aplicação de gestão de estoque executando em um Container Docker.</sub>
 
 </div>
 
@@ -75,7 +77,7 @@ Esses registros ficam disponíveis diretamente no computador, permitindo que a e
 
 <img src="https://github.com/user-attachments/assets/7262ce77-4b00-4f96-a640-57a0d044bd24" width="85%" alt="Ilustração da proteção dos dados com Docker Volume e Bind Mount"/>
 
-<sub>Figura 2 — Estratégia de armazenamento: Docker Volume e Bind Mount.</sub>
+<sub>Figura 2 - Estratégia de armazenamento: Docker Volume e Bind Mount.</sub>
 
 </div>
 
@@ -169,16 +171,11 @@ Selecione o método **POST**, clique em `Try it out` e insira o seguinte conteú
 }
 ```
 
-
-
-
-
-
 Clique em **Execute** para enviar a solicitação.
 
 Resultado esperado: produto cadastrado com sucesso!
 
-### 7. Consultar os produtos — GET
+### 7. Consultar os produtos - GET
 
 Agora, selecione o método **GET** na interface da API.
 
@@ -192,7 +189,14 @@ Resultado esperado: a aplicação retorna a lista de produtos cadastrados no est
 
 **📸 Resultado dos testes**
 
-*Adicione aqui a captura de tela da interface da API mostrando as operações POST e GET.*
+<div align="center">
+
+<img src="https://github.com/user-attachments/assets/d19b64ff-7059-4b84-b78e-4779001d6085"  width="85%" alt="Ilustração da captura de tela da interface da API mostrando as operações POST e GET"/>
+
+<sub>Figura 4 - Captura de tela da interface da API mostrando as operações POST e GET.</sub>
+
+</div>
+
 
 </div>
 
@@ -207,10 +211,3 @@ Com essa solução, demonstramos como a tecnologia pode contribuir diretamente p
 - **Organização:** cada tipo de informação possui seu próprio local de armazenamento.
 - **Continuidade:** a aplicação pode ser reiniciada sem perder os dados persistidos.
 
-<div align="center">
-
-### Tecnologia trabalhando a favor do negócio! 💜
-
-*Uma solução simples para demonstrar como Docker, Python e estratégias de armazenamento podem apoiar a gestão e a segurança de uma operação.*
-
-</div>
