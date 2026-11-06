@@ -1,8 +1,10 @@
 <div align="center">
-<img src="https://github.com/user-attachments/assets/760641e2-0a20-405a-8215-9ef381d3f618" width="320" alt="logo-techstore"/>
 
-# Koneko Store 
-Loja virtual de produtos de tecnologia
+<img src="https://github.com/user-attachments/assets/eaf526f7-8d56-4a3f-9829-ffd58207d50f" width="100%" alt="Koneko Store - Loja virtual de produtos de tecnologia"/>
+
+# Koneko Store
+
+**Loja virtual de produtos de tecnologia**
 
 </div>
 
@@ -59,7 +61,40 @@ A imagem será nossa receita para criar containers.
 --- 
 
 <div align="center">
-<img src="https://github.com/user-attachments/assets/88b0a673-8ec4-4580-afc3-a6df283cd612"  width="800" alt="AWS Logo"/>
+<img src="https://github.com/user-attachments/assets/88b0a673-8ec4-4580-afc3-a6df283cd612"  width="800" alt="Diagrama"/>
+</div>
+
+---
+
+## 1. Jornada do pedido
+A jornada do pedido (Order Lifecycle) é o caminho que um pedido percorre dentro de um e-commerce,
+desde o momento em que o cliente escolhe um produto até a conclusão da compra.
+
+E essa jornada será o coração do nosso laboratório Koneko Store.
+
+**1. A jornada do cliente dentro da Koneko Store**
+
+<div align="center">
+<img src="https://github.com/user-attachments/assets/87de2a41-f60f-49fa-925e-f32bc50c42a7"  width="800" alt="jornada do pedido"/>
 </div>
 
 
+Imagine esta sequência:
+
+1. Cliente acessa a loja.
+2. Consulta os produtos disponíveis.
+3. Escolhe um produto.
+4. Adiciona ao carrinho.
+5. Finaliza a compra.
+6. O sistema registra o pedido.
+7. O pedido é processado.
+8. O estoque é atualizado.
+9. O pedido é confirmado.
+10. O produto é separado e enviado.
+    
+Mas existe uma diferença importante: o cliente faz a compra, a `API` registra o pedido e o `Worker` processa esse pedido.
+
+
+## 2. Jornada dentro da arquitetura Docker
+
+Imagine que a cliente compre dois mouses Logitech.
