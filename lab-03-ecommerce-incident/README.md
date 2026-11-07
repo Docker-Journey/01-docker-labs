@@ -128,3 +128,22 @@ Imagine que a cliente compre dois mouses Logitech.
 
 > A API recebe os dados da compra, valida se o produto existe e verifica a disponibilidade inicial do estoque.
 > Exemplo: o estoque informa 30 unidades.
+
+3. Pedido é registrado
+
+`koneko-api`
+
+A API gera um identificador:
+
+`PED-0001`
+
+<div align="center">
+<img src="https://github.com/user-attachments/assets/d00357f1-ea52-47f7-8b2e-afc7a3a5a396" width="600" alt="Diagrama"/>
+</div>
+
+> O pedido é armazenado com status `PENDING`.
+
+
+
+
+
