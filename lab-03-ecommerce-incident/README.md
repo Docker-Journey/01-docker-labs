@@ -168,3 +168,20 @@ A API gera um identificador:
 <div align="center">
 <img src="https://github.com/user-attachments/assets/d9d3588b-09f6-4c87-ad97-d90cb8b12b95" width="600" alt="Diagrama"/>
 </div>
+
+
+6. Pedido é atualizado
+   
+Processamento concluído
+
+O status muda de `PENDING` para `PROCESSED`.
+
+
+<div align="center">
+<img src="https://github.com/user-attachments/assets/1f1b4bf4-395a-41c5-af0d-6530f450380e" width="600" alt="Diagrama"/>
+</div>
+
+
+
+
+
