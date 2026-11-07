@@ -143,7 +143,17 @@ A API gera um identificador:
 
 > O pedido é armazenado com status `PENDING`.
 
+4. Worker recebe o pedido para processamento
 
+`koneko-worker`
+
+<div align="center">
+<img src="https://github.com/user-attachments/assets/86b2ac6a-213b-421d-bb3c-4cc293b49455" width="600" alt="Diagrama"/>
+</div>
+
+
+
+> O Worker busca os pedidos pendentes, verifica as regras de processamento e executa a atualização do estoque.
 
 
 
