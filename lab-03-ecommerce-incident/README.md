@@ -67,6 +67,7 @@ A imagem será nossa receita para criar containers.
 ---
 
 ## 1. Jornada do pedido
+
 A jornada do pedido (Order Lifecycle) é o caminho que um pedido percorre dentro de um e-commerce,
 desde o momento em que o cliente escolhe um produto até a conclusão da compra.
 
@@ -101,7 +102,7 @@ Imagine que a cliente compre dois mouses Logitech.
 
 **Fluxo de processamento do pedido**
 
-1. Cliente escolhe o produto
+1️⃣ Cliente escolhe o produto
 
 <table>
   <tr>
@@ -118,7 +119,7 @@ Imagine que a cliente compre dois mouses Logitech.
 
 >  O cliente adiciona dois mouses ao carrinho e finaliza a compra.
 
-2. API recebe o pedido
+2️⃣ API recebe o pedido
 
 `koneko-api`
 
@@ -129,7 +130,7 @@ Imagine que a cliente compre dois mouses Logitech.
 > A API recebe os dados da compra, valida se o produto existe e verifica a disponibilidade inicial do estoque.
 > Exemplo: o estoque informa 30 unidades.
 
-3. Pedido é registrado
+3️⃣ Pedido é registrado
 
 `koneko-api`
 
@@ -143,7 +144,7 @@ A API gera um identificador:
 
 > O pedido é armazenado com status `PENDING`.
 
-4. Worker recebe o pedido para processamento
+4️⃣ Worker recebe o pedido para processamento
 
 `koneko-worker`
 
@@ -155,7 +156,7 @@ A API gera um identificador:
 
 > O Worker busca os pedidos pendentes, verifica as regras de processamento e executa a atualização do estoque.
 
-5. Estoque é atualizado
+5️⃣ Estoque é atualizado
 
 `koneko-worker`
 
@@ -170,7 +171,7 @@ A API gera um identificador:
 </div>
 
 
-6. Pedido é atualizado
+6️⃣ Pedido é atualizado
    
 Processamento concluído
 
@@ -181,7 +182,14 @@ O status muda de `PENDING` para `PROCESSED`.
 <img src="https://github.com/user-attachments/assets/1f1b4bf4-395a-41c5-af0d-6530f450380e" width="600" alt="Diagrama"/>
 </div>
 
+7️⃣ Cliente recebe a confirmação
 
+> A loja informa que o pedido foi confirmado e segue para a próxima etapa logística:
+> separação e envio.
+
+<div align="center">
+<img src="https://github.com/user-attachments/assets/ce635371-d1de-4fe5-89aa-6b29b452a30f" width="600" alt="Diagrama"/>
+</div>
 
 
 
