@@ -98,3 +98,23 @@ Mas existe uma diferença importante: o cliente faz a compra, a `API` registra o
 ## 2. Jornada dentro da arquitetura Docker
 
 Imagine que a cliente compre dois mouses Logitech.
+
+**Fluxo de processamento do pedido**
+
+1. Cliente escolhe o produto
+
+<table>
+  <tr>
+    <td width="50%" align="center" valign="middle">
+      <img src="https://github.com/user-attachments/assets/47c728ff-2f37-466c-91b2-1d37e7e6b8c7"  alt="Mouse Gamer" width="60%">
+    </td>
+    <td width="50%" valign="middle">
+      <h3>Mouse Logitech</h3>
+      <p><strong>Quantidade:</strong> 2 unidades</p>
+      <p><strong>Preço unitário:</strong> R$ 120,00</p>     
+    </td>
+  </tr>
+</table>
+
+>  O cliente adiciona dois mouses ao carrinho e finaliza a compra.
+
