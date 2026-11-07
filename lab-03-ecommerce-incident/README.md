@@ -202,3 +202,31 @@ O status muda de `PENDING` para `PROCESSED`.
 | Baixa no estoque      | Worker      | Atualiza quantidade       |
 | Confirmação           | Worker/API  | Atualiza status           |
 | Auditoria             | Ambos       | Registram logs            |
+
+## 4. Onde ficarão os arquivos?
+
+- Volume Docker: `konekostore-data`
+
+Persistência dos dados da operação
+
+```
+konekostore-data/
+├── products.db
+├── orders.db
+├── inventory.db
+└── processing.db
+```
+
+- Bind mount: `./logs`
+Arquivos físicos no Ubuntu / host
+```
+logs/
+├── api.log
+├── worker.log
+└── errors.log
+```
+
+
+
+
+
