@@ -249,3 +249,18 @@ O que você investigaria?
 - *O banco está acessível?*
 - *O pedido foi processado parcialmente?*
 - *O estoque foi atualizado duas vezes?*
+
+---
+
+E nossa próxima etapa será construir a aplicação de verdade.
+
+Vamos fazer a Koneko Store gerar pedidos, consultar produtos, atualizar estoque e registrar logs. Depois vamos começar a quebrar essa operação de propósito.
+
+Vamos construir uma operação de e-commerce suficientemente realista para provocar incidentes, 
+perder dados de teste, investigar falhas de persistência e recuperar serviços.
+
+E uma coisa importante: vamos garantir que o processamento de pedidos seja **idempotente** isto é,
+se o Worker tentar processar o mesmo pedido novamente, não poderá descontar o estoque duas vezes.
+
+Vem fazer esse excelente exercício de investigação de incidentes. 💜
+
