@@ -118,3 +118,13 @@ Imagine que a cliente compre dois mouses Logitech.
 
 >  O cliente adiciona dois mouses ao carrinho e finaliza a compra.
 
+2. API recebe o pedido
+
+`koneko-api`
+
+<div align="center">
+<img src="https://github.com/user-attachments/assets/8ff88e98-491d-4da9-9ef0-3645cd66133d" width="600" alt="Diagrama"/>
+</div>
+
+> A API recebe os dados da compra, valida se o produto existe e verifica a disponibilidade inicial do estoque.
+> Exemplo: o estoque informa 30 unidades.
