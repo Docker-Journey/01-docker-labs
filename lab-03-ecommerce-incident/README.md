@@ -155,5 +155,16 @@ A API gera um identificador:
 
 > O Worker busca os pedidos pendentes, verifica as regras de processamento e executa a atualização do estoque.
 
+5. Estoque é atualizado
 
+`koneko-worker`
 
+- Antes: 30 mouses.
+
+- Saída: 2 mouses.
+
+- Depois: 28 mouses.
+
+<div align="center">
+<img src="https://github.com/user-attachments/assets/d9d3588b-09f6-4c87-ad97-d90cb8b12b95" width="600" alt="Diagrama"/>
+</div>
