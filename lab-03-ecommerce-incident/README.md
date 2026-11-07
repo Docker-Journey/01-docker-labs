@@ -191,5 +191,14 @@ O status muda de `PENDING` para `PROCESSED`.
 <img src="https://github.com/user-attachments/assets/ce635371-d1de-4fe5-89aa-6b29b452a30f" width="600" alt="Diagrama"/>
 </div>
 
+## 3. O que vai acontecer com os dados em cada etapa?
 
-
+| **Momento**           | **Serviço** | **O que acontece**       |
+|-----------------------|-------------|--------------------------|
+| Consulta de produtos  | API         | Lê o catálogo             |
+| Finalização da compra | API         | Recebe os dados           |
+| Registro do pedido    | API         | Salva o pedido             |
+| Processamento         | Worker      | Busca pedidos pendentes   |
+| Baixa no estoque      | Worker      | Atualiza quantidade       |
+| Confirmação           | Worker/API  | Atualiza status           |
+| Auditoria             | Ambos       | Registram logs            |
