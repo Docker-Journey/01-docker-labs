@@ -226,7 +226,26 @@ logs/
 └── errors.log
 ```
 
+> O desenho acima representa os dados que precisamos armazenar, não necessariamente quatro bancos diferentes.
+
+## 5. E se alguma coisa der errado durante a jornada?
 
 
+![Cenário](https://img.shields.io/badge/Imagine_que_o_cliente_finalizou_a_compra,_mas_o_Worker_parou-E74C3C?style=for-the-badge&labelColor=922B21)
 
+<div align="center">
+<img src="https://github.com/user-attachments/assets/3d6a19c1-49ec-4889-a8a2-8a10c76e1172" width="600" alt="Diagrama"/>
+</div>
 
+---
+
+O que você investigaria?
+
+- *A API recebeu o pedido?*
+- *O pedido foi persistido?*
+- *O Worker está executando?*
+- *O processo principal morreu?*
+- *Existe erro de permissão no volume?*
+- *O banco está acessível?*
+- *O pedido foi processado parcialmente?*
+- *O estoque foi atualizado duas vezes?*
