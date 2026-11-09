@@ -23,14 +23,25 @@ o estoque não poderá ser descontado duas vezes.
 
 ## 1. Nossa loja terá dois serviços principais:
 
-![Serviço-1](https://img.shields.io/badge/Serviço--1-28A745?style=for-the-badge&labelColor=19692C)
+![Serviço-1](https://img.shields.io/badge/Serviço--1-28A745?style=for-the-badge&labelColor=19692C) koneko-api
 
-koneko-api
+
 
 A porta de entrada da loja. Recebe as solicitações dos clientes.
 - Consultar produtos.
 - Consultar estoque.
 - Receber pedidos.
-- Registrar pedidos como PENDING.
+- Registrar pedidos como `PENDING`.
 - Consultar o status de um pedido.
+
+---
+
+![Serviço-2](https://img.shields.io/badge/Serviço--2-2980B9?style=for-the-badge&labelColor=1F618D) koneko-worker
+
+O trabalhador dos bastidores. Processa os pedidos.
+- Busca pedidos pendentes.
+- Verifica disponibilidade.
+- Atualiza o estoque.
+- Marca pedidos como `PROCESSED`.
+- Registra logs do processamento.
 
