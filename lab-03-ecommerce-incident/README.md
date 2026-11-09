@@ -264,3 +264,10 @@ se o Worker tentar processar o mesmo pedido novamente, não poderá descontar o 
 
 Vem fazer esse excelente exercício de investigação de incidentes. 💜
 
+---
+
+**Próximo passo:**
+
+[01-Overview do projeto](https://github.com/Docker-Journey/01-docker-labs/blob/main/lab-03-ecommerce-incident/01-overview-projeto-koneko-store.md)
+
+02-Execução o projeto
