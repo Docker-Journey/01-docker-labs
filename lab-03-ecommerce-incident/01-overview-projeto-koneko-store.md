@@ -45,3 +45,10 @@ O trabalhador dos bastidores. Processa os pedidos.
 - Marca pedidos como `PROCESSED`.
 - Registra logs do processamento.
 
+---
+![Infraestrutura compartilhada](https://img.shields.io/badge/Infraestrutura_compartilhada-F1C40F?style=for-the-badge&labelColor=B7950B)
+- Imagem: `koneko-store:v1`
+- Volume: `konekostore-data`
+- Bind mount: `./logs`
+- Banco de dados: `SQLite`
+- Linguagem: `Python`
