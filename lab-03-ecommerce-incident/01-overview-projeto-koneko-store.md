@@ -52,3 +52,53 @@ O trabalhador dos bastidores. Processa os pedidos.
 - Bind mount: `./logs`
 - Banco de dados: `SQLite`
 - Linguagem: `Python`
+
+---
+
+## 2. Como a operação vai funcionar
+
+Imagine que uma cliente compre dois mouses Logitech.
+
+<details>
+<summary>1. Cliente faz o pedido</summary>
+
+Solicita 2 mouses pela API.
+
+</details>
+
+<details>
+<summary>2. API recebe a compra</summary>
+
+Cria o pedido `PED-0001` com status `PENDING`.
+
+</details>
+
+<details>
+<summary>3. Worker identifica o pedido</summary>
+
+Busca o pedido pendente no banco.
+
+</details>
+
+<details>
+<summary>4. Worker processa a compra</summary>
+
+Confere o estoque e reduz de 30 para 28.
+
+</details>
+
+<details>
+<summary>5. Banco registra a operação</summary>
+
+Atualiza o pedido para `PROCESSED`.
+
+</details>
+
+<details>
+<summary>6. Cliente recebe a confirmação</summary>
+
+A API consulta o status atualizado.
+
+</details>
+
+> E tudo isso vai deixar rastros: logs, registros no banco, estados dos containers e evidências no Linux.
