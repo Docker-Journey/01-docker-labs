@@ -22,3 +22,15 @@ Também vamos implementar uma proteção chamada idempotência: se o Worker tent
 o estoque não poderá ser descontado duas vezes.
 
 ## 1. Nossa loja terá dois serviços principais:
+
+![Serviço-1](https://img.shields.io/badge/Serviço--1-28A745?style=for-the-badge&labelColor=19692C)
+
+koneko-api
+
+A porta de entrada da loja. Recebe as solicitações dos clientes.
+- Consultar produtos.
+- Consultar estoque.
+- Receber pedidos.
+- Registrar pedidos como PENDING.
+- Consultar o status de um pedido.
+
